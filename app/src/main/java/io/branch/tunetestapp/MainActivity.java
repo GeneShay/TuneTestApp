@@ -14,14 +14,11 @@ public class MainActivity extends AppCompatActivity {
 
         Tune.setDebugMode(true);
         Tune.init(this, "199265", "621b735d10c7784e19d4e309409b3d87");
-    }
 
-    @Override
-    protected void onStart(){
-        super.onStart();
         Tune.getInstance().registerDeeplinkListener(new TuneDeeplinkListener() {
             @Override
             public void didReceiveDeeplink(String deeplink) {
+                System.out.println("DID RECEIVE DEEP LINK");
                 // Handle the deferred deeplink here
                 // e.g. open the link
                 if (!"".equals(deeplink)) {
@@ -36,5 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("DEEP LINK ERROR: " + error);
             }
         });
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
     }
 }

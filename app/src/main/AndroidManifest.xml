@@ -18,6 +18,9 @@
         </receiver>
         <activity android:name=".MainActivity">
             <intent-filter>
+                <data android:scheme="https" android:host="gq2-n.tlnk.io" />
+            </intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
